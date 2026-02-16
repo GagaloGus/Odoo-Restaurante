@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Accion: abrea la lista/form del modelo-->
+     <record id="action_modulo_categoria" model="ir.actions.act_window">
+        <field name="name">Categorías del Restaurante</field>
+        <field name="res_model">restaurante.categoria</field>
+        <field name="view_mode">tree,form</field>
+     </record>
+
+     <!-- Menu principal -->
+      <menuitem id="menu_modulo_categorias_root" 
+      name="Categorias Restaurante" 
+      action="action_modulo_categoria"
+      sequence="10"/>
+
+     <!-- Submenu -->
+     <menuitem id="menu_modulo_categorias_categoria" 
+     name="Categorias del Restaurante" 
+     parent="menu_modulo_categorias_root" 
+     action="action_modulo_categoria"
+     sequence="10"/>
+</odoo>
