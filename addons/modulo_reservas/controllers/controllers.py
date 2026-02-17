@@ -1,22 +1,13 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http
+from odoo.http import request
 
+class ModuloReservas(http.Controller):
 
-# class ModuloReservas(http.Controller):
-#     @http.route('/modulo_reservas/modulo_reservas', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
-
-#     @http.route('/modulo_reservas/modulo_reservas/objects', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('modulo_reservas.listing', {
-#             'root': '/modulo_reservas/modulo_reservas',
-#             'objects': http.request.env['modulo_reservas.modulo_reservas'].search([]),
-#         })
-
-#     @http.route('/modulo_reservas/modulo_reservas/objects/<model("modulo_reservas.modulo_reservas"):obj>', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('modulo_reservas.object', {
-#             'object': obj
-#         })
+    @http.route('/reservas', auth='public', website=True)
+    def reservas_list(self, **kwargs):
+        reservas = request.env['modulo_reservas.modulo_reservas'].sudo().search([])
+        return request.render('modulo_reservas.reservas_template', {
+            'reservas': reservas
+        })
 
