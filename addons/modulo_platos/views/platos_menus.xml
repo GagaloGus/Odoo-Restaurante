@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Accion: abre la lista/form del modelo -->
+    <record id="action_menu_platos" model="ir.actions.act_window">
+        <field name="name">Platitos</field>
+        <field name="res_model">modulo_platos.plato</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu principal -->
+    <menuitem
+        id="menu_platos_root"
+        name="Gestion de platos"
+        action="action_menu_platos"
+        sequence="10" />
+
+    <!-- Submenu -->
+
+    <menuitem
+        id="menu_platos_submenu"
+        name="Productos Internos"
+        parent="menu_platos_root"
+        action="action_menu_platos"
+        sequence="10" />
+</odoo>
