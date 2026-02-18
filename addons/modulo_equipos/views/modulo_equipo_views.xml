@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree -->
+    <record id="view_equipo_miembro_tree" model="ir.ui.view">
+        <field name="name">equipo.miembro.tree</field>
+        <field name="model">equipo.miembro</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="rol"/>
+            </tree>
+        </field>
+
+    </record>
+
+    <!--  Form -->
+    <record id="view_equipo_miembro_form" model="ir.ui.view">
+        <field name="name">equipo.miembro.form</field>
+        <field name="model">equipo.miembro</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="rol"/>
+                    </group>
+
+                    <group>
+                        <field name="description"/>
+                        <field name="foto"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+</odoo>
