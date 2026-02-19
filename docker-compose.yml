@@ -52,5 +52,5 @@ volumes:
 networks:
   odoo-net:
 
-  #yzsn-vk7g-gsng
-
+# Database Name: odoo_proyecto_final
+# Master Password: nrvc-ej53-rjuz

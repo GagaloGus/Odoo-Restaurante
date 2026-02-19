@@ -6,18 +6,9 @@ from odoo.http import request
 class ModuloCategorias(http.Controller):
      @http.route('/categorias', auth='public', website=True)
      def categorias_list(self, **kwargs):
-         return "Hello, world"
+         
+        categorias = request.env['restaurante.categoria'].sudo().search([('active', '=', True)])
 
-     @http.route('/modulo_categorias/modulo_categorias/objects', auth='public')
-     def list(self, **kw):
-         return http.request.render('modulo_categorias.listing', {
-             'root': '/modulo_categorias/modulo_categorias',
-             'objects': http.request.env['modulo_categorias.modulo_categorias'].search([]),
-         })
-
-     @http.route('/modulo_categorias/modulo_categorias/objects/<model("modulo_categorias.modulo_categorias"):obj>', auth='public')
-     def object(self, obj, **kw):
-         return http.request.render('modulo_categorias.object', {
-             'object': obj
-         })
-
+        return request.render('modulo_categorias.template_categorias', {
+            'categorias': categorias
+        })

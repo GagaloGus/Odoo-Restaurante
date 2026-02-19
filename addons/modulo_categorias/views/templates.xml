@@ -1,24 +1,24 @@
 <odoo>
-    <data>
-<!--
-        <template id="listing">
-          <ul>
-            <li t-foreach="objects" t-as="object">
-              <a t-attf-href="#{ root }/objects/#{ object.id }">
-                <t t-esc="object.display_name"/>
-              </a>
-            </li>
-          </ul>
-        </template>
-        <template id="object">
-          <h1><t t-esc="object.display_name"/></h1>
-          <dl>
-            <t t-foreach="object._fields" t-as="field">
-              <dt><t t-esc="field"/></dt>
-              <dd><t t-esc="object[field]"/></dd>
-            </t>
-          </dl>
-        </template>
--->
-    </data>
+  <template id="template_categorias" name="Listado de Categorías">
+        <t t-call="website.layout">
+            <div class="container mt-4">
+                <h1>Categorías del Restaurante</h1>
+
+                <div class="row">
+                    <t t-foreach="categorias" t-as="categoria">
+                        <div class="col-md-4 mb-3">
+                            <div class="card p-3">
+                                <h3>
+                                    <t t-esc="categoria.name"/>
+                                </h3>
+                                <p>
+                                    <t t-esc="categoria.description"/>
+                                </p>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
 </odoo>
