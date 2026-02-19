@@ -9,5 +9,5 @@ class Plato(models.Model):
     #default_code = fields.Char('Referencia')
     price = fields.Float('Precio')
     description = fields.Text('Descripción')
-    image = fields.Image('Imagen')
     available = fields.Boolean('Disponible', default=True)
+    image = fields.Image('Imagen')
