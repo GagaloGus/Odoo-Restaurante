@@ -13,8 +13,8 @@ class ModuloEquipos(http.Controller):
         })
 
      @http.route('/equipo/<model("equipo.miembro"):miembro>', auth='public', website=True)
-     def equipo_detail(self, obj, **kw):
+     def equipo_detail(self, miembro, **kw):
          return http.request.render('modulo_equipos.web_equipo_detail', {
-             'miembro': obj
+             'miembro': miembro
          })
 
