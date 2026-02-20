@@ -1,0 +1,42 @@
+<odoo>
+    <template id="homepage" name="Inicio Restaurante">
+        <t t-call="website.layout">
+            <div class="container mt-5 text-center">
+
+                <h1>Restaurante Odoo</h1>
+                <p class="lead">
+                    Sistema de gestión integral del restaurante.
+                </p>
+
+                <div class="row mt-4">
+
+                    <div class="col-md-3">
+                        <a href="/categorias" class="btn btn-primary w-100">
+                            Categorías
+                        </a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="/platos" class="btn btn-success w-100">
+                            Platos
+                        </a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="/reservas" class="btn btn-warning w-100">
+                            Reservas
+                        </a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="/equipo" class="btn btn-dark w-100">
+                            Equipo
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Categorias Restaurante",
+    'name': "Home Restaurante",
 
-    'summary': "Modulo de categorias del restaurante",
+    'summary': "Pagina principal del restaurante",
 
     'author': "Soledad Moral",
 
@@ -17,9 +17,7 @@
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
-        'views/modulo_categorias_views.xml',
-        'views/modulo_categorias_menu.xml',
+        # 'security/ir.model.access.csv',
         'views/templates.xml',
     ],
     'application': True,
