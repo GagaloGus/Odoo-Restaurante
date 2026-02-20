@@ -1,0 +1,5 @@
+name,description,active
+Entrantes,Platos para comenzar la comida,True
+Platos Principales,Platos fuertes del menú,True
+Postres,Dulces y postres caseros,True
+Bebidas,Refrescos y vinos,True

@@ -3,9 +3,9 @@
 # from odoo import models, fields, api
 
 
-# class modulo_platos(models.Model):
-#     _name = 'modulo_platos.modulo_platos'
-#     _description = 'modulo_platos.modulo_platos'
+# class modulo_home(models.Model):
+#     _name = 'modulo_home.modulo_home'
+#     _description = 'modulo_home.modulo_home'
 
 #     name = fields.Char()
 #     value = fields.Integer()

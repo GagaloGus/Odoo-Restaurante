@@ -1,0 +1,63 @@
+<odoo>
+    <template id="homepage" name="Inicio Restaurante">
+        <t t-call="website.layout">
+            <div class="container mt-5">
+                <div class="jumbotron text-center bg-light p-5 shadow-sm">
+                    <h1 class="display-4">Proyecto Gestión Restaurante</h1>
+                    <p class="lead">Bienvenido al sistema de administración integral de nuestro establecimiento gastronómico.</p>
+                    <hr class="my-4"/>
+                    <p>Este proyecto desarrollado en Odoo permite gestionar desde la carta de platos y sus categorías hasta las reservas de los clientes y la administración del equipo de trabajo.</p>
+                    <p class="text-muted small">Desarrollado por: Soledad Moral y Equipo</p>
+                </div>
+
+                <div class="row mt-5 mb-5">
+                    <h3 class="text-center mb-4 w-100">Secciones del Sistema</h3>
+                    
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100 text-center shadow-sm">
+                            <div class="card-body">
+                                <i class="fa fa-tags fa-3x mb-3 text-primary"></i>
+                                <h5 class="card-title">Categorías</h5>
+                                <p class="card-text small">Organización del menú por secciones.</p>
+                                <a href="/categorias" class="btn btn-outline-primary w-100">Ir a Categorías</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100 text-center shadow-sm">
+                            <div class="card-body">
+                                <i class="fa fa-cutlery fa-3x mb-3 text-success"></i>
+                                <h5 class="card-title">Carta</h5>
+                                <p class="card-text small">Gestión de la carta y precios.</p>
+                                <a href="/carta" class="btn btn-outline-success w-100">Ver Platos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100 text-center shadow-sm">
+                            <div class="card-body">
+                                <i class="fa fa-calendar fa-3x mb-3 text-warning"></i>
+                                <h5 class="card-title">Reservas</h5>
+                                <p class="card-text small">Control de mesas y clientes.</p>
+                                <a href="/reservas" class="btn btn-outline-warning w-100">Gestionar Reservas</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100 text-center shadow-sm">
+                            <div class="card-body">
+                                <i class="fa fa-users fa-3x mb-3 text-dark"></i>
+                                <h5 class="card-title">Equipo</h5>
+                                <p class="card-text small">Personal y gestión de Staff.</p>
+                                <a href="/equipo" class="btn btn-outline-dark w-100">Ver Equipo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

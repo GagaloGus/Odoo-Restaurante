@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="web_platos_list" name="Cartita de platitos">
+        <t t-call="website.layout">
+            <div class="container mt-4">
+                <h1>Carta</h1>
+
+                <!-- Cards de productos -->
+                <div class="row mt-3">
+
+                    <!-- Creamos un bucle, cada producto se guarda en un p -->
+                    <t t-foreach="carta" t-as="p">
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+
+                                    <!-- Aqui podemos el nombre del procuto -->
+                                    <!-- Accedemos a la variable con p.name -->
+                                    <t t-if="p.image">
+                                        <!-- La ruta es /web/image/modulo_platos.plato/ID
+                                        PLATO/image -->
+                                        <img
+                                            t-att-src="'/web/image/modulo_platos.plato/%s/image' % p.id"
+                                            class="img-fluid rounded"
+                                            style="height:240px; margin-bottom:20px" />
+                                    </t>
+                                    <h5 class="card-title" t-esc="p.name" />
+                                    <p class="card-text">
+                                        <t t-if="p.description">
+                                            <t t-esc="p.description or ''" />
+                                            <br/>
+                                        </t>
+                                        
+                                        <b>Precio:</b>
+                                        <t t-esc="p.price" />€
+                                    </p>
+
+                                    <!-- Genera URLS como: /productos/3 -->
+                                    <a href="" class="btn btn-primary"
+                                        t-att-href="'/carta/%s' % p.id">Ver detalles</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Vamos a definir Qweb de detalle de producto -->
+    <template id="web_plato_detail" name="Detalle del plato">
+        <t t-call="website.layout">
+            <div class="container mt-4">
+                <a href="/carta" class="btn btn-link">Volver</a>
+
+                <div class="row mt-3">
+
+                    <!-- COLUMNA IZQUIERDA (TEXTO) -->
+                    <div class="col-md-6">
+                        <h1 class="mt-2" t-esc="plato.name" />
+
+                        <ul class="list-group mt-3">
+                            <li class="list-group-item">
+                                <b>Precio:</b>
+                                <t t-esc="plato.price" />
+                            </li>
+                            <li class="list-group-item">
+                                <b>Disponible:</b>
+                                <t t-esc="plato.available" />
+                            </li>
+                            <li class="list-group-item">
+                                <b>Descripción:</b>
+                                <t t-esc="plato.description or ''" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- COLUMNA DERECHA (IMAGEN) -->
+                    <div class="col-md-6 text-center">
+                        <t t-if="plato.image">
+                            <img
+                                t-att-src="'/web/image/modulo_platos.plato/%s/image' % plato.id"
+                                class="img-fluid rounded shadow"
+                                style="max-height:400px;" />
+                        </t>
+                    </div>
+
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
