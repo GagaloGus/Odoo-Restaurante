@@ -2,10 +2,10 @@
 {
     'name': "modulo_platos",
 
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
+    'summary': "Modulo encargado de la gestion de platos",
 
     'description': """
-Long description of module's purpose
+Platooooooooooooooooooooooooooooooooooooooooooooooo
     """,
 
     'author': "My Company",
@@ -18,17 +18,20 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'website'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/platos_menus.xml',
+        'views/platos_views.xml',
+        'views/platos_web_detalles.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    "application": True,
+    "installable": True,
 }
 

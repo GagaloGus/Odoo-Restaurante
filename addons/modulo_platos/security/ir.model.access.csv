@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_modulo_platos_modulo_platos,modulo_platos.modulo_platos,model_modulo_platos_modulo_platos,base.group_user,1,1,1,1
+access_modulo_platos_plato,modulo_platos_plato,model_modulo_platos_plato,base.group_user,1,1,1,1

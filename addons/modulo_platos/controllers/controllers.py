@@ -1,22 +1,17 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http # type: ignore
+from odoo.http import request # type: ignore
 
-
-# class ModuloPlatos(http.Controller):
-#     @http.route('/modulo_platos/modulo_platos', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
-
-#     @http.route('/modulo_platos/modulo_platos/objects', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('modulo_platos.listing', {
-#             'root': '/modulo_platos/modulo_platos',
-#             'objects': http.request.env['modulo_platos.modulo_platos'].search([]),
-#         })
-
-#     @http.route('/modulo_platos/modulo_platos/objects/<model("modulo_platos.modulo_platos"):obj>', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('modulo_platos.object', {
-#             'object': obj
-#         })
-
+class ModuloPlatos(http.Controller):
+    @http.route('/carta', auth='public', website=True)
+    def mostrar_carta(self, **kw):
+        carta = request.env['modulo_platos.plato'].sudo().search([])
+        return request.render('modulo_platos.web_platos_list', {
+            'carta': carta
+        })
+    
+    @http.route('/carta/<model("modulo_platos.plato"):plato>', auth='public', website=True)
+    def productos_detalles(self, plato, **kw):
+        return request.render('modulo_platos.web_plato_detail', {
+            'plato': plato
+        })
