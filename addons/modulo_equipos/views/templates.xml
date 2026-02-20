@@ -1,24 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-<!--
-        <template id="listing">
-          <ul>
-            <li t-foreach="objects" t-as="object">
-              <a t-attf-href="#{ root }/objects/#{ object.id }">
-                <t t-esc="object.display_name"/>
-              </a>
-            </li>
-          </ul>
-        </template>
-        <template id="object">
-          <h1><t t-esc="object.display_name"/></h1>
-          <dl>
-            <t t-foreach="object._fields" t-as="field">
-              <dt><t t-esc="field"/></dt>
-              <dd><t t-esc="object[field]"/></dd>
+  <!--Aqui definimos template Qweb para Equipos-->
+  <template id="web_equipo_list" name="Web Lista Equipo">
+      <t t-call="website.layout">
+        <div class="container mt-4">
+          <h1>Equipo</h1>
+          <!--Cards de equipos-->
+          <div class="row mt-3">
+            
+            <t t-foreach="miembros" t-as="m">
+              <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="card h-100">
+
+                  <div class="card-body">
+                    
+                  <t t-if="m.foto">
+                    <img class="img-fluid rounded"
+                      t-att-src="'/web/image/equipo.miembro/%s/foto' %m.id"
+                      style="height:240px; margin-bottom:20px"
+                      alt="Foto"/>
+                  </t>
+                    <h5 class="card-title" t-esc="m.name"/>
+                    <p class="card-text">
+                        <!--or '' evita errores si el campo esta vacio-->
+                        <strong>Rol</strong><t t-esc="m.rol or ''"/><br/>
+                      </p>
+                      <!--Genera URLS -->
+                      <a class="btn btn-primary" t-att-href="'/equipo/%s' % m.id">
+                        ver detalle
+                      </a>
+                  </div>
+
+                </div>
+
+              </div>
             </t>
-          </dl>
-        </template>
--->
-    </data>
+
+          </div>
+        </div>
+      </t>
+  </template>
+
+  <template id="web_equipo_detail" name="Web Detalle Equipo">
+      <t t-call="website.layout">
+        <div class="container mt-4">
+          <a href ="/equipo" class="btn btn-link">Volver</a>
+
+          <h1 class="mt-2" t-esc="miembro.name"/>
+          <ul class="list-group mt-3">
+            <li class="list-group-item"><strong>Rol</strong> <t t-esc="miembro.rol or ''"/></li>
+            <li class="list-group-item"><strong>Descripciòn</strong> <t t-esc="miembro.description or ''"/></li>
+          </ul>
+
+          <t t-if="miembro.foto">
+            <img class="img-fluid mt-3"
+              t-att-src="'data:image/png;base64,%s' % miembro.foto"
+              alt="Foto"/>
+          </t>
+        </div>
+      </t>
+   </template> 
 </odoo>
