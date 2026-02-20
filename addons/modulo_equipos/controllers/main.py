@@ -4,11 +4,11 @@ from odoo.http import request
 
 
 
-class ModuloEquipos(http.Controller):
+class ModuloEquipo(http.Controller):
      @http.route('/equipo', auth='public', website=True)
-     def equipo_list(self, **kwargs):
+     def equipo_list(self, **kw):
         miembros = request.env['equipo.miembro'].sudo().search([])
-         return request.render('modulo_equipos.web_equipo.list', {
+        return request.render('modulo_equipos.web_equipo_list', {
              'miembros': miembros
         })
 

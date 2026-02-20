@@ -23,8 +23,8 @@ Long description of module's purpose
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/modulo_equipo_menu.xml'
-        'views/modulo_equipo_views.xml'
+        'views/modulo_equipo_menu.xml',
+        'views/modulo_equipo_views.xml',
         'views/views.xml',
         'views/templates.xml',
     ],

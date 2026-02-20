@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- Accion -->
-     <record id="action_miembro_equipo" model="ir.actions.act_window">
+     <record id="action_equipo_miembro" model="ir.actions.act_window">
         <field name="name">Miembros</field>
         <field name="res_model">equipo.miembro</field>
         <field name="view_mode">tree,form</field>
